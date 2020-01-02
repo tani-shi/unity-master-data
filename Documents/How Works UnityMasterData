@@ -1,1 +1,122 @@
-<mxfile host="www.draw.io" modified="2020-01-02T05:53:59.957Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36" version="12.4.8" etag="r4XQSxnQgenvZygUZ1h3" type="github"><diagram id="UWX5Q0czR4uIdVA-AJC5">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="www.draw.io" modified="2020-01-02T05:55:06.872Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36" etag="veHJDeS-qC-BGvjakK9R" version="12.4.8" type="github">
+  <diagram id="UWX5Q0czR4uIdVA-AJC5" name="Page-1">
+    <mxGraphModel dx="1186" dy="692" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-1" value="Master Data Assets&lt;br&gt;(Scriptable Object)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="200" y="130" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-2" value="Master Data Source&lt;br&gt;(Excel)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="200" y="30" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-3" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="KTBDm_KrMQWVBsdgYvte-2" target="KTBDm_KrMQWVBsdgYvte-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="260" as="sourcePoint"/>
+            <mxPoint x="260" y="130" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-4" value="Export on Unity Editor" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="KTBDm_KrMQWVBsdgYvte-3">
+          <mxGeometry x="-0.15" y="2" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-5" value="&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Data Accessor Object" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="180" y="230" width="160" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KTBDm_KrMQWVBsdgYvte-8" target="KTBDm_KrMQWVBsdgYvte-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="90" y="280"/>
+              <mxPoint x="90" y="295"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-7" value="Provides data as readable" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="KTBDm_KrMQWVBsdgYvte-6">
+          <mxGeometry x="-0.1407" y="1" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-8" value="Data Transfer Object" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="200" y="250" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-9" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="KTBDm_KrMQWVBsdgYvte-1" target="KTBDm_KrMQWVBsdgYvte-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="180" y="430" as="sourcePoint"/>
+            <mxPoint x="230" y="380" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-10" value="Import as a Value Object&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="KTBDm_KrMQWVBsdgYvte-9">
+          <mxGeometry y="1" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KTBDm_KrMQWVBsdgYvte-5" target="KTBDm_KrMQWVBsdgYvte-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="328"/>
+              <mxPoint x="360" y="280"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-12" value="Access" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="KTBDm_KrMQWVBsdgYvte-11">
+          <mxGeometry x="-0.4667" y="6" relative="1" as="geometry">
+            <mxPoint x="8" y="-6" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-13" value="Get DAO" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="KTBDm_KrMQWVBsdgYvte-14" target="KTBDm_KrMQWVBsdgYvte-19">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-14" value="Master Data Manager&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="410" y="30" width="160" height="330" as="geometry"/>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="KTBDm_KrMQWVBsdgYvte-19" target="KTBDm_KrMQWVBsdgYvte-14">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-16" value="Invoke load action" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="KTBDm_KrMQWVBsdgYvte-15">
+          <mxGeometry x="0.2573" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="KTBDm_KrMQWVBsdgYvte-19" target="KTBDm_KrMQWVBsdgYvte-5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-18" value="Access to get master data" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="KTBDm_KrMQWVBsdgYvte-17">
+          <mxGeometry x="0.0303" y="2" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-19" value="User" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="150" y="390" width="450" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-20" value="Master Data Loader&lt;br&gt;(Defined by User)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="430" y="170" width="120" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-21" value="Load async" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="KTBDm_KrMQWVBsdgYvte-1" target="KTBDm_KrMQWVBsdgYvte-20">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="150"/>
+              <mxPoint x="490" y="150"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="KTBDm_KrMQWVBsdgYvte-20" target="KTBDm_KrMQWVBsdgYvte-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="390" y="205"/>
+              <mxPoint x="390" y="263"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-23" value="Set loaded assets" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="KTBDm_KrMQWVBsdgYvte-22">
+          <mxGeometry x="0.0588" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KTBDm_KrMQWVBsdgYvte-24" value="Empty DAO&lt;br&gt;Instance Collection" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="430" y="265" width="120" height="60" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
