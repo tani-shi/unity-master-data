@@ -18,7 +18,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 
-// If error here, you have to install ExcelDataReader plugins in your project.
+// If error here, you need to install ExcelDataReader plugins in your project.
 // See README. https://github.com/tani-shi/unity-master-data
 using ExcelDataReader;
 using UnityEngine;
@@ -26,72 +26,79 @@ using UnityEngine;
 namespace UnityMasterData.Libs {
 
     /// <summary>
-    /// The tool to read excel files (including no binary files like xls files.)
+    /// Provites to read and access a specified excel data file by the path.
+    /// 
+    /// *** Now, it is not supported to read binary files like xls files. ***
     /// </summary>
     public class Excel {
 
         /// <summary>
-        /// Excel sheet
+        /// Provides to access a specified excel sheet data.
         /// </summary>
         public struct Sheet {
 
             /// <summary>
-            /// Sheet name
+            /// The name of an excel sheet.
             /// </summary>
             public string name;
 
             /// <summary>
-            /// The all cells the sheet has.
+            /// The array that contains all of cell data instance that an excel sheet has.
             /// </summary>
             public Cell[] cells;
 
             /// <summary>
-            /// Get a specific sheet cell by row and column.
+            /// Get a specific sheet cell data instance by a specified row index and a specified column index.
             /// </summary>
-            /// <param name="row">Row index</param>
-            /// <param name="column">Column index</param>
-            /// <returns>Sheet cell instance</returns>
+            /// <param name="row">A specified row index</param>
+            /// <param name="column">A specified column index</param>
+            /// <returns>An instance of the specified cell if exists; otherwise null</returns>
             public Cell GetCell (int row, int column) {
                 return cells.FirstOrDefault (c => c.row == row && c.column == column);
             }
 
             /// <summary>
-            /// Get specific sheet cells by row index.
+            /// Get the specific sheet cells as an array by the specified row index.
             /// </summary>
-            /// <param name="row">Row index</param>
-            /// <returns>Array of sheet cell</returns>
+            /// <param name="row">The specified row index</param>
+            /// <returns>An array that has the specified cells if exists; otherwise an empty array.</returns>
             public Cell[] GetRowCells (int row) {
                 return cells.Where (c => c.row == row).ToArray ();
             }
 
+            /// <summary>
+            /// Get the cells as an array by the specified column index.
+            /// </summary>
+            /// <param name="column">The specified column index</param>
+            /// <returns>The cells as an array</returns>
             public Cell[] GetColumnCells (int column) {
                 return cells.Where (c => c.column == column).ToArray ();
             }
         }
 
         /// <summary>
-        /// Sheet cell data
+        /// Provides to access the specified cell data in the excel sheet.
         /// </summary>
         public struct Cell {
 
             /// <summary>
-            /// Row index
+            /// The row index where the cell is in.
             /// </summary>
             public int row;
 
             /// <summary>
-            /// Column index
+            /// The column index where the cell is in.
             /// </summary>
             public int column;
 
             /// <summary>
-            /// The value inside the cell
+            /// The value as a string inside the cell.
             /// </summary>
             public string value;
         }
 
         /// <summary>
-        /// The excel file name without file extension
+        /// The excel file name without a file extension
         /// </summary>
         public string name {
             get {
@@ -100,7 +107,7 @@ namespace UnityMasterData.Libs {
         }
 
         /// <summary>
-        /// The error details that failed reading. If null or empty, successfully readed.
+        /// The error details when failed reading. If null or empty, it was readed successfully.
         /// </summary>
         public string error {
             get {
@@ -109,7 +116,7 @@ namespace UnityMasterData.Libs {
         }
 
         /// <summary>
-        /// The all sheets the excel file has.
+        /// The array of all of the excel sheet instances.
         /// </summary>
         public Sheet[] Sheets {
             get {
@@ -122,21 +129,24 @@ namespace UnityMasterData.Libs {
         private string _name = string.Empty;
 
         /// <summary>
-        /// Try to read the xlsx file, then output to the instance you set.
+        /// If successfully to read the excel file, set a parsed instance to the instance you set,
+        /// otherwise, set an empty instance(non-null) to the instance you set.
         /// </summary>
-        /// <param name="path">The xlsx file path</param>
-        /// <param name="excel">The output destination instance</param>
-        /// <returns>If true, successfully read the file.</returns>
+        /// <param name="path">The excel file path</param>
+        /// <param name="excel">A instance of the destination to set a parsed instance</param>
+        /// <returns>If true, successfully read the file; otherwise, false.</returns>
         public static bool TryRead (string path, out Excel excel) {
             excel = Read (path);
             return string.IsNullOrEmpty (excel._error);
         }
 
         /// <summary>
-        /// Read the xlsx file
+        /// Try to read the excel file to parse.
+        /// If successfully to read, returns a parsed instance; otherwise returns an
+        /// empty instance(non-null) that has a detail string of error.
         /// </summary>
-        /// <param name="path">The xlsx file path</param>
-        /// <returns>The parsed instance.</returns>
+        /// <param name="path">A path of the excel file</param>
+        /// <returns>A parsed instance if successufully to read; otherwise an empty instance(non-null).</returns>
         public static Excel Read (string path) {
             var excel = new Excel ();
             excel._name = Path.GetFileNameWithoutExtension (path);
@@ -156,10 +166,10 @@ namespace UnityMasterData.Libs {
         }
 
         /// <summary>
-        /// Get a specific sheet by sheet name.
+        /// Get an instance of the specified excel sheet by a name of the excel sheet.
         /// </summary>
-        /// <param name="name">Sheet name</param>
-        /// <returns>Sheet</returns>
+        /// <param name="name">A name of the excel sheet</param>
+        /// <returns>An instance of the specified excel sheet if exists; otherwise null.</returns>
         public Sheet GetSheet (string name) {
             return _sheets.FirstOrDefault (s => s.name == name);
         }
