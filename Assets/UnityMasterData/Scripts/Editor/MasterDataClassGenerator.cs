@@ -162,7 +162,7 @@ using UnityMasterData;
 using UnityMasterData.Interfaces;
 
 namespace ${BASE_NAMESPACE}.Collection {
-    public class MasterDataObjectCollection : IMasterDataAccessorObjectCollection {
+    public class MasterDataAccessorObjectCollection : IMasterDataAccessorObjectCollection {
         private List<IMasterDataAccessorObject> _collection = new List<IMasterDataAccessorObject>() {
 ${DATA_ACCESSOR_OBJECTS}
         };
@@ -394,7 +394,7 @@ ${DATA_ACCESSOR_OBJECTS}
         }
 
         private static string CollectionScriptPath (string destPath) {
-            return Path.Combine (destPath, "Collection/Generated/MasterDataObjectCollection.cs");
+            return Path.Combine (destPath, "Collection/Generated/MasterDataAccessorObjectCollection.cs");
         }
     }
 }

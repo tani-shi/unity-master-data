@@ -21,7 +21,7 @@ using UnityMasterDataDemo.MasterData.VO.Sample;
 namespace UnityMasterDataDemo {
     public class DemoScene : MonoBehaviour {
         private void Start () {
-            DemoMasterDataManager.Instance.LoadAsync (new MasterDataObjectCollection (), () => {
+            DemoMasterDataManager.Instance.LoadAsync (new MasterDataAccessorObjectCollection (), () => {
                 LogParameterByKey ();
                 LogParametersByType ();
                 LogAllParameters ();

@@ -6,7 +6,7 @@ using UnityMasterData;
 using UnityMasterData.Interfaces;
 
 namespace UnityMasterDataDemo.MasterData.Collection {
-    public class MasterDataObjectCollection : IMasterDataAccessorObjectCollection {
+    public class MasterDataAccessorObjectCollection : IMasterDataAccessorObjectCollection {
         private List<IMasterDataAccessorObject> _collection = new List<IMasterDataAccessorObject>() {
             (Activator.CreateInstance(typeof(DAO.Sample.CharacterDAO)) as IMasterDataAccessorObject),
         };
