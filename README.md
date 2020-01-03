@@ -17,13 +17,13 @@ The diagram following here is described how works UnityMasterData.
 - ExcelDataReader
 - ExcelDataReader.DataSet
 
-### 3. Import the latest unitypackage of UnityMasterData.
-
-- https://github.com/tani-shi/unity-master-data/releases
-
-### 4. Install the latest package of Addressable Asset System from PackageManager.
+### 3. Install the latest package of Addressable Asset System from PackageManager.
 
 - https://docs.unity3d.com/Packages/com.unity.addressables@0.2/manual/AddressableAssetsGettingStarted.html
+
+### 4. Import the latest unitypackage of UnityMasterData.
+
+- https://github.com/tani-shi/unity-master-data/releases
 
 ## Ways to use
 
