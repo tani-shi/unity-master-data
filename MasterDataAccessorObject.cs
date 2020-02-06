@@ -18,8 +18,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityMasterData.Interfaces;
 
-namespace UnityMasterData {
-
+namespace UnityMasterData
+{
     /// <summary>
     /// The DAO base class that can be accessible value objects from data assets(DTO).
     /// Basically no need extending manually, since auto-generating.
@@ -28,7 +28,8 @@ namespace UnityMasterData {
     /// <typeparam name="DTO">DTO type</typeparam>
     /// <typeparam name="VO">VO type</typeparam>
     /// <typeparam name="K">Primary key type</typeparam>
-    public abstract class MasterDataAccessorObject<DAO, DTO, VO, K> : IMasterDataAccessorObject, IEnumerable<VO> where DAO : MasterDataAccessorObject<DAO, DTO, VO, K>, new () where DTO : MasterDataTransferObject<VO, K>, IEnumerable<VO> where VO : class, IValueObject<K>, new () {
+    public abstract class MasterDataAccessorObject<DAO, DTO, VO, K> : IMasterDataAccessorObject, IEnumerable<VO> where DAO : MasterDataAccessorObject<DAO, DTO, VO, K>, new () where DTO : MasterDataTransferObject<VO, K>, IEnumerable<VO> where VO : class, IValueObject<K>, new ()
+    {
         private DTO _dto;
         private Dictionary<K, VO> _dictionary = new Dictionary<K, VO> ();
 
@@ -36,11 +37,14 @@ namespace UnityMasterData {
         /// Get the data as a json.
         /// </summary>
         /// <returns>A serialized data as a json</returns>
-        public string ToJson () {
+        public string ToJson ()
+        {
             var json = "{\"" + GetName () + "\":[";
-            for (int i = 0; i < _dto.list.Count; i++) {
+            for (int i = 0; i < _dto.list.Count; i++)
+            {
                 json += JsonUtility.ToJson (_dto.list[i]);
-                if (i < _dto.list.Count - 1) {
+                if (i < _dto.list.Count - 1)
+                {
                     json += ",";
                 }
             }
@@ -63,12 +67,15 @@ namespace UnityMasterData {
         /// Set data as a DTO class to access for data values.
         /// </summary>
         /// <param name="data">A specified master data asset instance</param>
-        public void SetData (ScriptableObject data) {
+        public void SetData (ScriptableObject data)
+        {
             _dto = data as DTO;
             _dictionary.Clear ();
-            foreach (var e in _dto) {
+            foreach (var e in _dto)
+            {
                 var key = e.GetKey ();
-                if (_dictionary.ContainsKey (key)) {
+                if (_dictionary.ContainsKey (key))
+                {
                     Debug.LogWarning ("duplicated key: [" + key + "] in VO:[" + typeof (DTO).Name + "].");
                 }
                 _dictionary[key] = e;
@@ -80,9 +87,11 @@ namespace UnityMasterData {
         /// </summary>
         /// <param name="key">The primary key value</param>
         /// <returns>An instance of VO that has the specified primary key value if exists; otherwise null</returns>
-        public VO Get (K key) {
+        public VO Get (K key)
+        {
             VO element;
-            if (_dictionary.TryGetValue (key, out element)) {
+            if (_dictionary.TryGetValue (key, out element))
+            {
                 return element;
             }
             Debug.LogError (string.Format ("attempted to get non-existed object in {0}. key={1}", typeof (DTO).Name, key.ToString ()));
@@ -96,9 +105,11 @@ namespace UnityMasterData {
         /// </summary>
         /// <param name="key">The primary key value</param>
         /// <returns>An instance of VO that has the specified primary key value if exists; otherwise null</returns>
-        public VO GetSilently (K key) {
+        public VO GetSilently (K key)
+        {
             VO element;
-            if (_dictionary.TryGetValue (key, out element)) {
+            if (_dictionary.TryGetValue (key, out element))
+            {
                 return element;
             }
             return null;
@@ -110,7 +121,8 @@ namespace UnityMasterData {
         /// </summary>
         /// <param name="key">The primary key value</param>
         /// <returns>If true, exists any items in the data assets; otherwise false</returns>
-        public bool Contains (K key) {
+        public bool Contains (K key)
+        {
             return Exists (item => item.GetKey ().Equals (key));
         }
 
@@ -119,7 +131,8 @@ namespace UnityMasterData {
         /// </summary>
         /// <param name="item">The object to locate</param>
         /// <returns>If true, item is found in the data assets</returns>
-        public bool Contains (VO item) {
+        public bool Contains (VO item)
+        {
             return _dto.list.Contains (item);
         }
 
@@ -131,7 +144,8 @@ namespace UnityMasterData {
         /// If true the data assets contains one or more elements that match the conditions
         /// defined by the specified predicate
         /// </returns>
-        public bool Exists (Predicate<VO> match) {
+        public bool Exists (Predicate<VO> match)
+        {
             return _dto.list.Exists (match);
         }
 
@@ -141,7 +155,8 @@ namespace UnityMasterData {
         /// </summary>
         /// <param name="match">The delegate that defines the conditions of the elements to search for.</param>
         /// <returns>The first element that matches the conditions defined by the specified predicate, if found; otherwise, null</returns>
-        public VO Find (Predicate<VO> match) {
+        public VO Find (Predicate<VO> match)
+        {
             return _dto.list.Find (match);
         }
 
@@ -153,7 +168,8 @@ namespace UnityMasterData {
         /// A data assets containing all the elements that match the conditions defined by
         /// the specified predicate, if found; otherwise, an empty list.
         /// </returns>
-        public List<VO> FindAll (Predicate<VO> match) {
+        public List<VO> FindAll (Predicate<VO> match)
+        {
             return _dto.list.FindAll (match);
         }
 
@@ -161,15 +177,18 @@ namespace UnityMasterData {
         /// Performs the specified action on each element of the data assets.
         /// </summary>
         /// <param name="action">The delegate to perform on each element of the data assets</param>
-        public void ForEach (Action<VO> action) {
+        public void ForEach (Action<VO> action)
+        {
             _dto.list.ForEach (action);
         }
 
-        IEnumerator<VO> IEnumerable<VO>.GetEnumerator () {
+        IEnumerator<VO> IEnumerable<VO>.GetEnumerator ()
+        {
             return _dto.GetEnumerator ();
         }
 
-        IEnumerator IEnumerable.GetEnumerator () {
+        IEnumerator IEnumerable.GetEnumerator ()
+        {
             return _dto.GetEnumerator ();
         }
     }

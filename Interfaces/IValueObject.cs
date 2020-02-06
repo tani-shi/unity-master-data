@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace UnityMasterData.Interfaces {
-
+namespace UnityMasterData.Interfaces
+{
     /// <summary>
     /// An interfaces of value object classes that is contained as a list element in ScriptableObject.
     /// No need to extend manually, since this is extended by auto-generating.
     /// </summary>
     /// <typeparam name="K">The primary key type (Commonly, this will be 'int' or 'uint'.)</typeparam>
-    public interface IValueObject<K> {
-
+    public interface IValueObject<K>
+    {
         /// <summary>
         /// Get the primary key value.
         /// </summary>

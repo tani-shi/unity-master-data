@@ -16,14 +16,14 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace UnityMasterData.Interfaces {
-
+namespace UnityMasterData.Interfaces
+{
     /// <summary>
     /// Interface of data accessor object classes.
     /// No need to extend manually since this is extended by auto-generating.
     /// </summary>
-    public interface IMasterDataAccessorObject {
-
+    public interface IMasterDataAccessorObject
+    {
         /// <summary>
         /// Get the data as a json.
         /// </summary>

@@ -18,8 +18,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityMasterData.Interfaces;
 
-namespace UnityMasterData {
-
+namespace UnityMasterData
+{
     /// <summary>
     /// A singleton base class of manager of master data.
     /// 
@@ -31,18 +31,22 @@ namespace UnityMasterData {
     /// 3. Export master data assets as ScriptableObject with using MasterDataExporter.
     /// 4. Create a class that extended this class in your project. (See also DemoMasterDataManager.cs)
     /// </summary>
-    public abstract class MasterDataManagerBase<T> : MonoBehaviour where T : MasterDataManagerBase<T> {
-
+    public abstract class MasterDataManagerBase<T> : MonoBehaviour where T : MasterDataManagerBase<T>
+    {
         /// <summary>
         /// Get singleton instance, if exists; otherwise, instantiate then get.
         /// </summary>
         /// <value>A singleton instance</value>
-        public static T Instance {
-            get {
-                if (_instance == null) {
+        public static T Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
                     _instance = FindObjectOfType<T> ();
                 }
-                if (_instance == null) {
+                if (_instance == null)
+                {
                     GameObject obj = new GameObject (typeof (T).Name);
                     _instance = obj.AddComponent<T> ();
                 }
@@ -59,7 +63,8 @@ namespace UnityMasterData {
         /// </summary>
         /// <param name="collection">DAO collection that generated in your project</param>
         /// <param name="onCompleted">Callback on completed loading</param>
-        public void LoadAsync (IMasterDataAccessorObjectCollection collection, Action onCompleted = null) {
+        public void LoadAsync (IMasterDataAccessorObjectCollection collection, Action onCompleted = null)
+        {
             StartCoroutine (LoadAsyncProc (collection, onCompleted));
         }
 
@@ -68,7 +73,8 @@ namespace UnityMasterData {
         /// </summary>
         /// <param name="collection">DAO collection that generated in your project</param>
         /// <returns>An iteration to provide load async</returns>
-        public IEnumerator LoadAsync (IMasterDataAccessorObjectCollection collection) {
+        public IEnumerator LoadAsync (IMasterDataAccessorObjectCollection collection)
+        {
             yield return LoadAsyncProc (collection);
         }
 
@@ -76,9 +82,11 @@ namespace UnityMasterData {
         /// Load immediately master data with MasterDataLoader.
         /// </summary>
         /// <param name="loader">DAO collection that generated in your project</param>
-        public void LoadLocal (IMasterDataAccessorObjectCollection collection) {
+        public void LoadLocal (IMasterDataAccessorObjectCollection collection)
+        {
             _daoMap.Clear ();
-            foreach (var dao in collection) {
+            foreach (var dao in collection)
+            {
                 LoadProc (dao);
                 _daoMap.Add (dao.GetType (), dao);
             }
@@ -89,7 +97,8 @@ namespace UnityMasterData {
         /// </summary>
         /// <typeparam name="DAO">DAO type</typeparam>
         /// <returns>DAO instance</returns>
-        public DAO Get<DAO> () where DAO : IMasterDataAccessorObject {
+        public DAO Get<DAO> () where DAO : IMasterDataAccessorObject
+        {
             return (DAO) _daoMap[typeof (DAO)];
         }
 
@@ -109,22 +118,29 @@ namespace UnityMasterData {
         /// <returns>An iteration to provide load</returns>
         protected abstract void LoadProc (IMasterDataAccessorObject dao);
 
-        private void Awake () {
-            if (_instance == null) {
+        private void Awake ()
+        {
+            if (_instance == null)
+            {
                 _instance = (this as T);
                 DontDestroyOnLoad (gameObject);
-            } else {
+            }
+            else
+            {
                 Destroy (gameObject);
             }
         }
 
-        private IEnumerator LoadAsyncProc (IMasterDataAccessorObjectCollection collection, Action onCompleted = null) {
+        private IEnumerator LoadAsyncProc (IMasterDataAccessorObjectCollection collection, Action onCompleted = null)
+        {
             _daoMap.Clear ();
-            foreach (var dao in collection) {
+            foreach (var dao in collection)
+            {
                 yield return LoadAsyncProc (dao);
                 _daoMap.Add (dao.GetType (), dao);
             }
-            if (onCompleted != null) {
+            if (onCompleted != null)
+            {
                 onCompleted.Invoke ();
             }
         }
