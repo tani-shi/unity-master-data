@@ -1,0 +1,14 @@
+{
+    "name": "com.tani-shi.unity-master-data",
+    "references": [
+        "GUID:9714757d6aa9d4f53821f8cfe46cd7ef"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}

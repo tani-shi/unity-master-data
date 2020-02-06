@@ -3,7 +3,9 @@ using System;
 using UnityEngine;
 using UnityMasterData;
 
-namespace UnityMasterDataDemo.MasterData.DTO.Sample {
-    public partial class CharacterDTO : MasterDataTransferObject<VO.Sample.CharacterVO, uint> {
+namespace UnityMasterDataDemo.MasterData.DTO.Sample
+{
+    public partial class CharacterDTO : MasterDataTransferObject<VO.Sample.CharacterVO, uint>
+    {
     }
 }

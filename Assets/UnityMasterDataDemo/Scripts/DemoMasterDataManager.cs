@@ -21,30 +21,42 @@ using UnityEngine.AddressableAssets;
 using UnityMasterData;
 using UnityMasterData.Interfaces;
 
-namespace UnityMasterDataDemo {
-    public class DemoMasterDataManager : MasterDataManagerBase<DemoMasterDataManager> {
-        protected override IEnumerator LoadAsyncProc (IMasterDataAccessorObject dao) {
+namespace UnityMasterDataDemo
+{
+    public class DemoMasterDataManager : MasterDataManagerBase<DemoMasterDataManager>
+    {
+        protected override IEnumerator LoadAsyncProc (IMasterDataAccessorObject dao)
+        {
             Debug.Log ("LOAD: " + dao.GetName ());
             var handle = Addressables.LoadAssetAsync<ScriptableObject> (dao.GetAssetPath ());
             yield return handle;
-            if (handle.Result != null) {
+            if (handle.Result != null)
+            {
                 dao.SetData (Instantiate (handle.Result));
                 Debug.Log (dao.ToJson ());
-            } else {
+            }
+            else
+            {
                 Debug.LogError ("Failed to load a master data asset. " + dao.GetAssetPath ());
             }
         }
 
-        protected override void LoadProc (IMasterDataAccessorObject dao) {
+        protected override void LoadProc (IMasterDataAccessorObject dao)
+        {
 #if UNITY_EDITOR
-            if (!Application.isPlaying) {
+            if (!Application.isPlaying)
+            {
                 var data = UnityEditor.AssetDatabase.LoadAssetAtPath<ScriptableObject> (dao.GetAssetPath ());
-                if (data != null) {
+                if (data != null)
+                {
                     dao.SetData (data);
-                } else {
+                }
+                else
+                {
                     Debug.LogError ("Failed to load a master data asset. " + dao.GetAssetPath ());
                 }
-            } else
+            }
+            else
 #endif
             {
                 Debug.LogWarning ("It is not supported to load on a frame for except Editor Mode.");

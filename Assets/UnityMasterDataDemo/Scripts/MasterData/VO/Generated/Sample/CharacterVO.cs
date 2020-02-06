@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityMasterData.Interfaces;
 using UnityMasterDataDemo.MasterData.Type;
 
-namespace UnityMasterDataDemo.MasterData.VO.Sample {
+namespace UnityMasterDataDemo.MasterData.VO.Sample
+{
     [SerializableAttribute]
-    public partial class CharacterVO : IValueObject<uint> {
+    public partial class CharacterVO : IValueObject<uint>
+    {
         public uint id;
         public CharacterType type;
         public string assetName;
@@ -16,7 +18,8 @@ namespace UnityMasterDataDemo.MasterData.VO.Sample {
         public uint baseAtk;
         public uint baseDef;
 
-        public uint GetKey() {
+        public uint GetKey ()
+        {
             return id;
         }
     }

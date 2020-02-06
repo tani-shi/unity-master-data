@@ -18,40 +18,51 @@ using UnityMasterDataDemo.MasterData.DAO.Sample;
 using UnityMasterDataDemo.MasterData.Type;
 using UnityMasterDataDemo.MasterData.VO.Sample;
 
-namespace UnityMasterDataDemo {
-    public class DemoScene : MonoBehaviour {
-        private void Start () {
-            DemoMasterDataManager.Instance.LoadAsync (new MasterDataAccessorObjectCollection (), () => {
+namespace UnityMasterDataDemo
+{
+    public class DemoScene : MonoBehaviour
+    {
+        private void Start ()
+        {
+            DemoMasterDataManager.Instance.LoadAsync (new MasterDataAccessorObjectCollection (), () =>
+            {
                 LogParameterByKey ();
                 LogParametersByType ();
                 LogAllParameters ();
             });
         }
 
-        private void LogParameterByKey () {
+        private void LogParameterByKey ()
+        {
             Debug.Log ("START LOGGING: Parameter By Key");
             LogCharacterParameter (DemoMasterDataManager.Instance.Get<CharacterDAO> ().Get (101));
             Debug.Log ("END LOGGING");
         }
 
-        private void LogParametersByType () {
+        private void LogParametersByType ()
+        {
             Debug.Log ("START LOGGING: Parameters By Type");
-            foreach (var data in DemoMasterDataManager.Instance.Get<CharacterDAO> ().FindAll (item => item.type == CharacterType.Dragon)) {
+            foreach (var data in DemoMasterDataManager.Instance.Get<CharacterDAO> ().FindAll (item => item.type == CharacterType.Dragon))
+            {
                 LogCharacterParameter (data);
             }
             Debug.Log ("END LOGGING");
         }
 
-        private void LogAllParameters () {
+        private void LogAllParameters ()
+        {
             Debug.Log ("START LOGGING: All Parameters");
-            foreach (var data in DemoMasterDataManager.Instance.Get<CharacterDAO> ()) {
+            foreach (var data in DemoMasterDataManager.Instance.Get<CharacterDAO> ())
+            {
                 LogCharacterParameter (data);
             }
             Debug.Log ("END LOGGING");
         }
 
-        private void LogCharacterParameter (CharacterVO data) {
-            if (data != null) {
+        private void LogCharacterParameter (CharacterVO data)
+        {
+            if (data != null)
+            {
                 Debug.Log (string.Format ("<color=cyan>id={0}, type={1}, assetName={2}, moveSpeed={3}, baseHp={4}, baseSp={5}, baseAkt={6}, baseDef={7}</color>",
                     data.id, data.type, data.assetName, data.moveSpeed, data.baseHp, data.baseSp, data.baseAtk, data.baseDef));
             }

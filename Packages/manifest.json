@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.tani-shi.unity-excel": "https://github.com/tani-shi/unity-excel.git#1.0.0",
     "com.unity.addressables": "1.5.0",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ext.nunit": "1.0.0",
@@ -41,5 +42,11 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
+  },
+  "lock": {
+    "com.tani-shi.unity-excel": {
+      "hash": "879050d8c71fc91d340655eec669c7d2dccf3d70",
+      "revision": "1.0.0"
+    }
   }
 }

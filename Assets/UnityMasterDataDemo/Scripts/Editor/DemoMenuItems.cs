@@ -15,10 +15,13 @@
 using UnityEditor;
 using UnityMasterData.Editor;
 
-namespace UnityMasterDataDemo.Editor {
-    public static class DemoMenuItems {
+namespace UnityMasterDataDemo.Editor
+{
+    public static class DemoMenuItems
+    {
         [MenuItem ("UnityMasterDataDemo/Generate Master Data Class Scripts")]
-        private static void GenerateMasterDataClassScripts () {
+        private static void GenerateMasterDataClassScripts ()
+        {
             MasterDataClassGenerator.GenerateAllDataScripts (
                 "Assets/UnityMasterDataDemo/Excels",
                 "Assets/UnityMasterDataDemo/Scripts",
@@ -27,7 +30,8 @@ namespace UnityMasterDataDemo.Editor {
         }
 
         [MenuItem ("UnityMasterDataDemo/Export Master Data Assets")]
-        private static void ExportMasterDataClass () {
+        private static void ExportMasterDataClass ()
+        {
             MasterDataExporter.Export ();
         }
     }
