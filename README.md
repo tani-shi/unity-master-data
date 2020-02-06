@@ -8,22 +8,17 @@ The diagram following here is described how works UnityMasterData.
 
 ## Getting started
 
-### 1. Import the latest unitypackage of NuGetForUnity.
+### Append lines in Package/manifest.json
 
-- https://github.com/GlitchEnzo/NuGetForUnity/releases
-
-### 2. Install packages of ExcelDataReader with using NuGet.
-
-- ExcelDataReader
-- ExcelDataReader.DataSet
-
-### 3. Install the latest package of Addressable Asset System from PackageManager.
-
-- https://docs.unity3d.com/Packages/com.unity.addressables@0.2/manual/AddressableAssetsGettingStarted.html
-
-### 4. Import the latest unitypackage of UnityMasterData.
-
-- https://github.com/tani-shi/unity-master-data/releases
+```
+{
+  "dependencies": {
+    "com.tani-shi.unity-excel": "https://github.com/tani-shi/unity-excel.git#1.0.0",
+    "com.tani-shi.unity-master-data": "https://github.com/tani-shi/unity-master-data.git#1.0.0",
+    ...
+    }
+}
+```
 
 ## Ways to use
 
