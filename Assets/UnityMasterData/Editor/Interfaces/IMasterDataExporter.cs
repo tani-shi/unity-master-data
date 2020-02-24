@@ -1,3 +1,5 @@
+#if UNITY_EDITOR
+
 namespace UnityMasterData.Editor.Interfaces
 {
     /// <summary>
@@ -14,3 +16,5 @@ namespace UnityMasterData.Editor.Interfaces
         void Export ();
     }
 }
+
+#endif
