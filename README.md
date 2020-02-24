@@ -14,7 +14,7 @@ The diagram following here is described how works UnityMasterData.
 {
   "dependencies": {
     "com.tani-shi.unity-excel": "https://github.com/tani-shi/unity-excel.git#1.0.0",
-    "com.tani-shi.unity-master-data": "https://github.com/tani-shi/unity-master-data.git#1.0.0",
+    "com.tani-shi.unity-master-data": "https://github.com/tani-shi/unity-master-data.git#1.0.1",
     ...
     }
 }
